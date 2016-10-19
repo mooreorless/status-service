@@ -5,3 +5,4 @@ The repository is open to contributions from all interested developers. The proj
 + Create issues that need to be fixed and submit a pull request to master.
 + Provide descriptive commit messages
 + Update documentation when adding features or special configurations are required to run the application.
++ Changes are required to include a test case.
