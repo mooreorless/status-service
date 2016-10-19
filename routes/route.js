@@ -46,7 +46,10 @@ module.exports = function (app){
     * @apiParam {String}
     */
     app.get('/api/status/:id', function(req, res){
-        hostid = _services[req.params.id];
-        res.json(_services);
+        var service = _services.filter( function (s){
+            return s.id == req.params.id;
+        })[0];
+
+        res.json(service);
     });
 }
