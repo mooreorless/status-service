@@ -32,13 +32,13 @@ module.exports = function (app){
     */
     app.post('/api/status',function(req, res){
         if(!req.body.hasOwnProperty('serviceName') ||
-           !req.body.hasOwnProperty('value')){
+           !req.body.hasOwnProperty('value') || 
+           !req.body.hasOwnProperty('hostName')) {
                res.statusCode = 400;
                return res.send('Error 400: Post syntax incorrect.');
            } else {
-               var uuid4 = uuid.v4();
                var newService = {
-                   id : uuid4,
+                   id : req.body.hostName,
                    serviceName : req.body.serviceName,
                    value : req.body.value
                };

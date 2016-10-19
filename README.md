@@ -6,6 +6,7 @@ Service status microservice to receive json containing a key value pair. This se
 # Install 
 Install the service on your local machine by running ```npm install``` to use mocha from command line you will need to run ```npm install -g mocha```.
 - You can also install nodemon for development ```npm install -g nodemon```
+
 # Run
 Run the application by executing ```npm start``` or ```nodemon server.js```.
 
