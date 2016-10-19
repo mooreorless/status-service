@@ -3,24 +3,31 @@ var uuid = require('node-uuid');
 
 module.exports = function (app){
     _services = [];
-    /*
+    /**
     * @api {get} / Request homepage
+    * @apiName Homepage
+    * @apiGroup Homepage
     */
     app.get('/', function (req, res){
         res.send('Hello World');
     })
 
-    /* 
-    * @api {get} /api/status 
+    /**
+    * @api {get} /api/status Status
     * @apiName status
-    * @apiresponse returns all data in _services
+    * @apiGroup Status
+    * @apiSuccess {Array} _ all data in `_services`
+    * @apiSuccess {String} _.0.id ID of the service update
+    * @apiSuccess {String} _.0.serviceName Name of the service
+    * @apiSuccess {any} _.0.value Information contained in the update.
     */
     app.get('/api/status', function(req, res){
         res.send(_services);
     });
 
-    /*
-    * @api {post} /api/status 
+    /**
+    * @api {post} /api/status Update status
+    * @apiGroup Status
     * @apiName status
     */
     app.post('/api/status',function(req, res){
@@ -40,10 +47,11 @@ module.exports = function (app){
            }
     });
 
-    /*
+    /**
     * @api {get} /api/status/:id Request service information
+    * @apiGroup Host
     * @apiName GetHost
-    * @apiParam {String}
+    * @apiParam {String} id Service ID.
     */
     app.get('/api/status/:id', function(req, res){
         var service = _services.filter( function (s){

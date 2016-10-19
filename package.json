@@ -9,6 +9,7 @@
   "scripts": {
     "test": "mocha test",
     "start": "node server.js",
+    "docs": "apidoc -i routes/ -o gh-pages/",
     "test-travis": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- -R spec ./test/*"
   },
   "repository": {
@@ -27,7 +28,14 @@
     "lodash": "^4.16.4",
     "node-uuid": "^1.4.7"
   },
+  "apidoc": {
+      "name": "statusservice",
+      "version": "1.0.0",
+      "title": "Status Service",
+      "url": ""
+  },
   "devDependencies": {
+    "apidoc": "^0.16.1",
     "coveralls": "^2.11.14",
     "expect": "^1.20.2",
     "istanbul": "^0.4.5",

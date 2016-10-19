@@ -1,4 +1,4 @@
-# Ignore the following content 
+# Ignore the following content
 node_modules
 jspm_packages
 .npm
@@ -8,3 +8,4 @@ logs
 *.log
 npm-debug.log*
 coverage
+gh-pages
