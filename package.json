@@ -1,0 +1,36 @@
+{
+  "name": "statusservice",
+  "version": "1.0.0",
+  "description": "Service status application to track running services.",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BondAnthony/status-service.git"
+  },
+  "author": "ajbond2005@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BondAnthony/status-service/issues"
+  },
+  "homepage": "https://github.com/BondAnthony/status-service#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "lodash": "^4.16.4",
+    "node-uuid": "^1.4.7"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.1.2",
+    "nodemon": "^1.11.0",
+    "superagent": "^2.3.0",
+    "supertest": "^2.0.0"
+  }
+}

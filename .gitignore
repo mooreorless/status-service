@@ -1,0 +1,9 @@
+# Ignore the following content 
+node_modules
+jspm_packages
+.npm
+.eslintcache
+*.tgz
+logs
+*.log
+npm-debug.log*
