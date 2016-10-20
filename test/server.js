@@ -42,7 +42,7 @@ describe('Testing express server', function(){
     it('Returns true if service added', function testPath(done){
         request(server)
             .post('/api/status')
-            .send({ serviceName: 'service name', value: 'service value' })
+            .send({ hostName: 'localhost', serviceName: 'service name', value: 'service value' })
             .expect(200, 'true', done);
     });
     it('Returns added service after one was added', function testPath(done){
