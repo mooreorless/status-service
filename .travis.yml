@@ -1,5 +1,16 @@
 language: node_js
 node_js:
-    - node
-script: ["npm run-script test-travis", "npm run docs"]
-after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+- node
+script:
+- npm run-script test-travis
+- npm run docs
+after_script: cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+deploy:
+  edge: true
+  provider: cloudfoundry
+  username: bond.anthony@outlook.com
+  password:
+    secure: uPkP0/B4ju45d5xEcwjDOihWXtDVRC+F/wQ6LjbGTmoIQCeuOPkoRF9WGxvK05BLFijyke9WKfGnwf+M1Zeq5tDL5VOxvS8qyCZzz04D2ONUiDCL9+eyjwrMg3mg0qL0lkqr9f8eJ5eVz/1IJcUQMhShtyL3IlbwKJHGiAGG9zk5aNL50ItH8dEe8DSdNFSShZpIAhJoBkhrqnU5vxePGpPqElj/w9Z3a0RP8XZ3wUg9xsrXaTzZI43NHeZvjngfyL852HmcIzmN76u9lfvM4Vk5knSu5l9+6tCzqq71ul5yEC4O59yuMINFSxa+sldXoXsmhDvxBh1qT25jv0OHUo9qHff6hJSLfujGpzRE0nXRTyX7YHxUO7urum28rEbsRnA7EJPyfCPvmU6TUKkETYcGOcRnlCM6QVftM0ubIE4qXwsjKAC82TW4O7QUjdhVR/Fk1v9R2UcfrxofPtLDoNZRqiSH1Ul+b0Ypr5l9GnlNLczeqYEvPlvou5/bmyoSlcBDNALyBSKnGY4k6SAKmyngorcv+HcBGwShRniSumDqx9ZMnsOW7xtBkg3XGrWuycEyTefS1RZqff9tDtG6guZoa7BDYK5FHeYp9Nk8WFHx6L6FL4aZjs6MoeaqC1ZIDzAUHqt1v6VaDuTidXawdQsSB3aKXqno0lwCD9mhwNk=
+    api: https://api.run.pivotal.io
+    organization: travis-ci
+    space: development
