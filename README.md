@@ -14,11 +14,18 @@ Run the application by executing ```npm start``` or ```nodemon server.js```.
 Execute tests by running ```moch test``` or ```npm test```
 Please develop test cases when possible.
 
+# Docs
+To create the api docs run ```npm run docs```
+
 # Example
 POST - http://localhost:3000/api/status
 ```
 {
+    "hostName": "localhost",
     "serviceName": "replication",
     "value": 1
 }
 ```
+
+# Contribute
+Please feel free to contribute to the project. All we ask is you follow our standards when developing against this project, visit the [contributing](CONTRIBUTING.md) page.

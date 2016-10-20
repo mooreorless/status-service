@@ -28,7 +28,10 @@ module.exports = function (app){
     /**
     * @api {post} /api/status Update status
     * @apiGroup Status
-    * @apiName status
+    * @apiName SendStatus
+    * @apiParam {String} serviceName Mandatory service name
+    * @apiParam {any} value Mandatory service status [1,0, compiled, on, off]
+    * @apiParam {String} hostName Mandatory endpoint hostname
     */
     app.post('/api/status',function(req, res){
         if(!req.body.hasOwnProperty('serviceName') ||
@@ -48,10 +51,10 @@ module.exports = function (app){
     });
 
     /**
-    * @api {get} /api/status/:id Request service information
+    * @api {get} /api/status/:id Request service information by hostName
     * @apiGroup Host
     * @apiName GetHost
-    * @apiParam {String} id Service ID.
+    * @apiParam {String} id Service Hostname ID.
     */
     app.get('/api/status/:id', function(req, res){
         var service = _services.filter( function (s){

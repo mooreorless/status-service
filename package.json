@@ -29,8 +29,9 @@
     "node-uuid": "^1.4.7"
   },
   "apidoc": {
-      "name": "statusservice",
+      "name": "Status Service",
       "version": "1.0.0",
+      "description": "Simple status service to accept service information from remote hosts.",
       "title": "Status Service",
       "url": ""
   },
