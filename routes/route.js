@@ -3,13 +3,14 @@ var uuid = require('node-uuid');
 
 module.exports = function (app){
     _services = [];
+    _ids = [];
     /**
     * @api {get} / Request homepage
     * @apiName Homepage
     * @apiGroup Homepage
     */
     app.get('/', function (req, res){
-      res.redirect('/api/status');
+      return res.redirect('/api/status');
     });
 
     /**
@@ -54,7 +55,8 @@ module.exports = function (app){
                _services.push(newService);
 
               // json needs to be returned rather than a random string
-               res.status(200).json({ message: 'Status submission successful', payload: _services });
+              return res.json(true);
+              //  res.status(200).json({ message: 'Status submission successful', payload: _services });
            }
     });
 
@@ -68,8 +70,8 @@ module.exports = function (app){
         var service = _services.filter( function (s){
             return s.hostName == req.params.hostName;
         })[0];
-        _services.push(service);
+        _ids.push(service);
 
-        res.render('status', { services: _services });
+        return res.render('status', { services: _ids });
     });
 }
